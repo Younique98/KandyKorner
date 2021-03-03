@@ -1,0 +1,15 @@
+.navbar {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: left;
+    font-size: 16px;
+    
+}
+
+.navbar__item {
+    flex-basis: 20%;
+    list-style-type: none;
+}
+.navbar__link {
+    color: darkslategray;
+}
