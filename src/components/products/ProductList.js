@@ -8,6 +8,7 @@ import { useHistory } from "react-router-dom"
 export const ProductList = () => {
   const { products, getProducts, searchTerms } = useContext(ProductContext)
     const {productTypes, getProductTypes} = useContext(ProductTypeContext);
+    {console.log(productTypes)}
   // Since you are no longer ALWAYS displaying all of the products
   const [ filteredProducts, setFiltered ] = useState([])
   const history = useHistory()

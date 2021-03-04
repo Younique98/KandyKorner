@@ -10,7 +10,7 @@ export const ProductDetail = () => {
 
 	const {productId} = useParams();
 	const history = useHistory();
-    const handleRelease = () => {
+    const addToCart = () => {
         releaseProduct(product.id)
           .then(() => {
             history.push("/products")
@@ -37,7 +37,7 @@ export const ProductDetail = () => {
       {/* What's up with the question mark???? See below.*/}
       <div className="product__location">Location: {product.location?.name}</div>
       <div className="product__type">Product Type: {product.productTypeId?.name}</div>
-      <button onClick={handleRelease}>Release Product</button>
+      <button onClick={addToCart}>Add to Cart</button>
       <button onClick={() => {
      history.push(`/products/edit/${product.id}`)
             }}>Edit</button>
