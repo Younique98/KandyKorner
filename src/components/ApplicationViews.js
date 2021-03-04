@@ -8,6 +8,8 @@ import {ProductTypeProvider} from "./products/ProductTypeProvider"
 import {ProductList} from "./products/ProductList"
 import {ProductSearch} from "./products/ProductSearch"
 import {ProductDetail} from "./products/ProductDetail"
+import {EmployeeList} from "./employees/EmployeeList"
+import {EmployeeProvider} from "./employees/EmployeeProvider"
 
 
 export const ApplicationViews = () => {
@@ -32,8 +34,10 @@ export const ApplicationViews = () => {
         </Route>
 
         <Route exact path="/products">
+          <ProductProvider>
               <ProductSearch />
               <ProductList />
+              </ProductProvider>
         </Route>
         <Route exact path="/products/detail/:productId(\d+)">
     <ProductDetail />
@@ -47,6 +51,13 @@ export const ApplicationViews = () => {
          <Route path="/locations">
         <LocationProvider>
         <LocationList />
+        </LocationProvider>
+      </Route>
+      <Route path="/employees">
+        <LocationProvider>
+        <EmployeeProvider>
+        <EmployeeList />
+        </EmployeeProvider>
         </LocationProvider>
       </Route>
 
