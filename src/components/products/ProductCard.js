@@ -11,7 +11,7 @@ export const ProductCard = ({productProps, productType}) => (
           { productProps.name }
         </Link>
         <div className="product__price">Price: {productProps.price}</div>
-        {/* <div className="product__productType">ProductType: {productType.type}</div> */}
+        <div className="product__productType">ProductType: {productType.type}</div>
     </section>
    
 )
