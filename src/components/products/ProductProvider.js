@@ -14,6 +14,7 @@ export const ProductProvider = (props) => {
       .then(productsData => setProducts(productsData))
   };
 
+    
   const addProduct = product => {
     return fetch("http://localhost:8088/products", {
         method: "POST",

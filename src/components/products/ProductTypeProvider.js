@@ -6,23 +6,44 @@ export const ProductTypeContext = createContext()
 // This component establishes what data can be used.
 export const ProductTypeProvider = (props) => {
   const [productTypes, setProductTypes] = useState([])
+  const [ searchTerms, setSearchTerms ] = useState("")
 
+ 
+  
   const getProductTypes = () => {
     return fetch("http://localhost:8088/productTypes")
       .then(response => response.json())
       .then(productTypesData => setProductTypes(productTypesData))
-  }
+  };
+  
+  const addProduct = product => {
+    return fetch("http://localhost:8088/products", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(product)
+    })
+    .then(response => response.json())
+};
+const getProductById = (id) => {
+  return fetch(`http://localhost:8088/products/${id}?_expand=location&_expand=locations`)
+    .then(res => res.json())
+};
 
-  /*
-      You return a context provider which has the
-      `productTypes` state, `getproductTypes` function,
-      and the `addproductType` function as keys. This
-      allows any child elements to access them.
-  */
+
+
+  
   return (
     <ProductTypeContext.Provider value={{
       productTypes: productTypes, 
-      getProductTypes: getProductTypes
+      getProductTypes: getProductTypes,
+      addProduct: addProduct,
+      searchTerms: searchTerms,
+      setSearchTerms: setSearchTerms,
+      setProductTypes: setProductTypes,
+      getProductById: getProductById,
+   
       
     }}>
       {props.children}
