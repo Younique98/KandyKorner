@@ -15,8 +15,8 @@ export const ProductList = () => {
 
   // Empty dependency array - useEffect only runs after first render
   useEffect(() => {
-      getProducts()
-      .then(getProductTypes)
+      getProductTypes()
+      .then(getProducts)
   }, [])
 
   // useEffect dependency array with dependencies - will run if dependency changes (state)
@@ -37,7 +37,7 @@ export const ProductList = () => {
       <h1>Products</h1>
 
       <button onClick={() => history.push("/products/create")}>
-          Online Pickup
+          Add for Online Pickup
       </button>
       <div className="products">
       {

@@ -9,7 +9,7 @@ export const ProductCard = ({ product }) => (
   
     <section className="product">
         <h3 className="product__name">
-          <Link to={`/products/detail/${product.id}`}>
+          <Link to={`/product/detail/${product.id}`}>
             { product.name }
           </Link>
         </h3>
