@@ -10,6 +10,10 @@ import {ProductSearch} from "./products/ProductSearch"
 import {ProductDetail} from "./products/ProductDetail"
 import {EmployeeList} from "./employees/EmployeeList"
 import {EmployeeProvider} from "./employees/EmployeeProvider"
+import {CustomerList} from "./customers/CustomerList"
+import {CustomerProvider} from "./customers/CustomerProvider"
+import {ProductForm} from "./products/ProductForm"
+import { CustomerCandyProvider } from "./customers/CustomerCandyProvider";
 
 
 export const ApplicationViews = () => {
@@ -24,6 +28,11 @@ export const ApplicationViews = () => {
           <ProductProvider>
             <ProductTypeProvider>
             <LocationProvider>
+              <CustomerProvider>
+
+              <Route path="/products/create">
+        <ProductForm />
+      </Route>
 
 
   
@@ -35,14 +44,28 @@ export const ApplicationViews = () => {
 
         <Route exact path="/products">
           <ProductProvider>
+            <CustomerCandyProvider>
               <ProductSearch />
               <ProductList />
+              </CustomerCandyProvider>
               </ProductProvider>
         </Route>
+
+        {/* <Route path="/products/create">
+        <ProductForm />
+      </Route> */}
+     
+
         <Route exact path="/products/detail/:productId(\d+)">
     <ProductDetail />
         </Route>
 
+        <Route path="/products/edit/:productId(\d+)">
+    <ProductForm />
+</Route>
+
+
+      </CustomerProvider>
         </LocationProvider>
         </ProductTypeProvider>
          </ProductProvider>
@@ -52,20 +75,27 @@ export const ApplicationViews = () => {
         <LocationProvider>
         <LocationList />
         </LocationProvider>
+        
       </Route>
+
+
+
+      <Route path="/customers">
+        <CustomerProvider>
+        <CustomerList />
+        </CustomerProvider>
+      </Route>
+
       <Route path="/employees">
         <LocationProvider>
         <EmployeeProvider>
         <EmployeeList />
+        
         </EmployeeProvider>
         </LocationProvider>
       </Route>
 
-      {/* <Route path="/products">
-        <ProductProvider>
-        <ProductList />
-        </ProductProvider>
-      </Route> */}
+     
       </>
     );
   };

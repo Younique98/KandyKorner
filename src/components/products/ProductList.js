@@ -15,8 +15,8 @@ export const ProductList = () => {
 
   // Empty dependency array - useEffect only runs after first render
   useEffect(() => {
-      getProducts()
-      .then(getProductTypes)
+      getProductTypes()
+      .then(getProducts)
   }, [])
 
   // useEffect dependency array with dependencies - will run if dependency changes (state)
