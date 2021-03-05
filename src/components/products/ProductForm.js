@@ -14,7 +14,8 @@ export const ProductForm = () => {
     const [product, setProduct] = useState({
       productName: "",
       productTypeId: 0,
-      price: 0
+      price: 0,
+      location: ""
     })
   
     //wait for data before button is active. Look at the button to see how it's setting itself to disabled or not based on this state
@@ -57,9 +58,11 @@ export const ProductForm = () => {
           //POST - add
           addProduct({
               name: product.name,
-              price: product.price
+              price: product.price,
+              location: product.locationId,
+              text: product.text
           })
-          .then(() => history.push("/customerCandy"))
+          .then(() => history.push("/products"))
         }
       }
     }

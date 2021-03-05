@@ -16,7 +16,7 @@ export const ProductProvider = (props) => {
 
     
   const addProduct = product => {
-    return fetch("http://localhost:8088/products", {
+    return fetch("http://localhost:8088/customerCandy", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -30,7 +30,7 @@ export const ProductProvider = (props) => {
     return fetch(`http://localhost:8088/products/${id}?_expand=location&_expand=customer`)
       .then(res => res.json())
 };
-const releaseProduct = product => {
+const addingProduct = product => {
     return fetch("http://localhost:8088/customerCandy", {
         method: "POST",
         headers: {
@@ -65,7 +65,7 @@ const updateProduct = product => {
       getProducts: getProducts,
       addProduct: addProduct,
       getProductById: getProductById,
-      releaseProduct: releaseProduct,
+      addingProduct: addingProduct,
       updateProduct: updateProduct,
       searchTerms: searchTerms,
       setSearchTerms: setSearchTerms

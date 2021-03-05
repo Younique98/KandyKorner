@@ -4,14 +4,14 @@ import "./Product.css"
 import { useParams, useHistory } from "react-router-dom"
 
 export const ProductDetail = () => {
-  const { getProductById, addProduct, releaseProduct } = useContext(ProductContext)
+  const { getProductById, addingProduct } = useContext(ProductContext)
 
 	const [product, setProduct] = useState({})
 
 	const {productId} = useParams();
 	const history = useHistory();
     const addToCart = () => {
-      releaseProduct(product.id)
+      addingProduct(product.id)
           .then(() => {
             history.push("/customerCandy")
           })

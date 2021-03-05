@@ -37,7 +37,7 @@ export const ProductList = () => {
       <h1>Products</h1>
 
       <button onClick={() => history.push("/products/create")}>
-          Add for Online Pickup
+          Online Pickup
       </button>
       <div className="products">
       {

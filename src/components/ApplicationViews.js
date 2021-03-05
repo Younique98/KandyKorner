@@ -30,6 +30,10 @@ export const ApplicationViews = () => {
             <LocationProvider>
               <CustomerProvider>
 
+              <Route path="/products/create">
+        <ProductForm />
+      </Route>
+
 
   
         <Route exact path="/locations">
@@ -47,9 +51,10 @@ export const ApplicationViews = () => {
               </ProductProvider>
         </Route>
 
-        <Route path="/products/create">
+        {/* <Route path="/products/create">
         <ProductForm />
-      </Route>
+      </Route> */}
+     
 
         <Route exact path="/products/detail/:productId(\d+)">
     <ProductDetail />
@@ -90,11 +95,7 @@ export const ApplicationViews = () => {
         </LocationProvider>
       </Route>
 
-      {/* <Route path="/products">
-        <ProductProvider>
-        <ProductList />
-        </ProductProvider>
-      </Route> */}
+     
       </>
     );
   };
