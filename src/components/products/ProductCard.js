@@ -35,7 +35,9 @@ export const ProductCard = ({productProps, productType}) => {
         <div className="product__price">Price: {productProps.price}</div>
         {/* <div className="product__productType">ProductType: {productPicked.type}</div> */}
         {products.map(product => {
-          const productPicked = products.find(productPickedAndPurchased => productPickedAndPurchased.id === product.locationId)
+          {console.log(products)}
+          
+          const productPicked = products.find(productPickedAndPurchased => productPickedAndPurchased.id === product.productTypeId)
           {console.log(productPicked)}
           return <div className="product__productType">ProductType: {productPicked.type}</div>
         })}
